@@ -11,14 +11,14 @@ class Solution:
         time: O(len(x))
         space: O(len(x))
         """
-        if x >= 0:
+        if 0 <= x:
             x = str(x)
             output = int(x[::-1])
         else:
             x = str(-x)
             x = int(x[::-1])
             output = -x
-        if output > 2 ** 31 or output < -1 * 2 ** 31:
+        if 2 ** 31 < abs(output):
             return 0
         return output
         
