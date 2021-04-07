@@ -13,12 +13,8 @@ class Solution:
         """
         if 2 ** 31 < abs(x):
             return 0
-        else:
-            x = str(x)
-            output = (x)[::-1]
-            if x == output:
-                return True
-            return False
+        x = str(x)
+        return x == x[:: -1]
 
 # @lc code=end
 
