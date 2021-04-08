@@ -8,7 +8,7 @@
 class Solution:
     def longestCommonPrefix(self, strs: List[str]) -> str:
         """
-        time: O(len(strs)・)
+        time: O(S) S: sum of the all characters
         space: O(1)
         """
         n = len(strs)
@@ -18,7 +18,6 @@ class Solution:
         flag = 1
         ans = ""
         for i in range(min_len):
-            #alp = strs[0][i]
             for j in range(len(strs)):
                 if strs[j][i] != strs[0][i]:
                     flag = 0
