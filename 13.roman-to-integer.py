@@ -12,13 +12,13 @@ class Solution:
         space: O(1)
         """
         ans = 0
-        dict_ = {'I' : 1, 'V' : 5, 'X' : 10, 'L' : 50, 'C' : 100, 'D' : 500, 'M' : 1000,}
+        roman_dict = {'I' : 1, 'V' : 5, 'X' : 10, 'L' : 50, 'C' : 100, 'D' : 500, 'M' : 1000,}
         for i in range(len(s)-1):
-            if dict_[s[i]] < dict_[s[i+1]]:
-                ans -= dict_[s[i]]
+            if roman_dict[s[i]] < roman_dict[s[i+1]]:
+                ans -= roman_dict[s[i]]
             else:
-                ans += dict_[s[i]]
-        ans += dict_[s[len(s)-1]]
+                ans += roman_dict[s[i]]
+        ans += roman_dict[s[len(s)-1]]
         return ans
 # @lc code=end
 
