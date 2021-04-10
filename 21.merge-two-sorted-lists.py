@@ -12,6 +12,10 @@
 #         self.next = next
 class Solution:
     def mergeTwoLists(self, l1: ListNode, l2: ListNode) -> ListNode:
+        """
+        time: O(S) S: sum of the all node
+        space: O(S)
+        """
         output = ListNode(0)
         output_add = output
         while l1 and l2:
