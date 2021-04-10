@@ -11,15 +11,15 @@ class Solution:
         time: O(S) S: sum of the all characters
         space: O(1)
         """
-        if len(strs) == 0:
+        if not strs:
             return ""
         min_len = len(min(strs, key=len))
         ans = ""
         for i in range(min_len):
             for j in range(len(strs)):
                 if strs[j][i] != strs[0][i]:
-                    return (ans)
+                    return ans
             ans += strs[0][i]
-        return (ans)
+        return ans
 # @lc code=end
 
