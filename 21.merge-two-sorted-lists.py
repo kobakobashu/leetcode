@@ -16,21 +16,24 @@ class Solution:
         time: O(S) S: sum of the all node
         space: O(S)
         """
-        output = ListNode(0)
-        output_add = output
+        head = ListNode(0)
+        cur_node = head
         while l1 and l2:
             if l1.val <= l2.val:
-                output_add.next = ListNode(l1.val)
+                cur_node.next = ListNode(l1.val)
                 l1 = l1.next
             else:
-                output_add.next = ListNode(l2.val)
+                cur_node.next = ListNode(l2.val)
                 l2 = l2.next
-            output_add = output_add.next
+            cur_node = cur_node.next
+        """
         if not l1:
-            output_add.next = l2
+            cur_node.next = l2
         else:
-            output_add.next = l1
-        return output.next
+            cur_node.next = l1
+        """
+        cur_node.next = l1 if not l2 else l2
+        return head.next
         
 # @lc code=end
 
