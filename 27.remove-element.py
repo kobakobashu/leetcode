@@ -11,7 +11,7 @@ class Solution:
         time: O(len(nums))
         space: O(1)
         """
-        if len(nums) == 0:
+        if not nums:
             return 0
         len_output = 0
         for cur_input in range(len(nums)):
