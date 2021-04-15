@@ -12,7 +12,6 @@ class Solution:
         space: O(1)
         """
         for index in range(len(nums)):
-            #print(index)
             if target <= nums[index]:
                 return index
         return len(nums)
