@@ -11,9 +11,6 @@ class Solution:
         time: O(1)
         space: O(len(l))  l : number of words
         """
-        l = s.split()
-        if not l:
-            return 0
-        return len(l[-1])
+        return len(s.split()[-1]) if s.split() else 0
 # @lc code=end
 
