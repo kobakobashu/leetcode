@@ -8,16 +8,16 @@
 class Solution:
     def strStr(self, haystack: str, needle: str) -> int:
         """
-        time: O(len(haystack))
-        space: O(len(haystack))
+        time: 
+        O(len(needle))  if len(haystack) == len(needle)
+        O(1)            else
+        space: O(len(needle))
         """
         if not needle:
             return 0
-        len_needle = len(needle)
-        len_haystack = len(haystack)
 
-        for i in range(len_haystack - len_needle + 1):
-            haystack_part = haystack[i:i+len_needle]
+        for i in range(len(haystack) - len(needle) + 1):
+            haystack_part = haystack[i: i + len(needle)]
             if  haystack_part == needle:
                 return i
         return -1
