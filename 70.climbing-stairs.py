@@ -11,13 +11,10 @@ class Solution:
         time: O(n)
         space: O(n)
         """
-        step = [0]*(n+2)
-        step[0] = 0
-        step[1] = 1
-        step[2] = 2
+        step = [i if i <= 2 else 0 for i in range(n + 2)]
         if 3 <= n:
-            for step_num in range(3,n+1):
-                step[step_num] = step[step_num - 1] + step[step_num - 2]
+            for num_step in range(3, n + 1):
+                step[num_step] = step[num_step - 1] + step[num_step - 2]
         return step[n]
 # @lc code=end
 
