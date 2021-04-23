@@ -9,8 +9,8 @@ class Solution:
     def strStr(self, haystack: str, needle: str) -> int:
         """
         time: 
-        O(len(needle))  if len(haystack) == len(needle)
-        O(1)            else
+        O(len(haystack) * len(needle))  if len(haystack) == len(needle)
+        O(len(haystack))                else
         space: O(len(needle))
         """
         if not needle:
