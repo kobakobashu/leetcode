@@ -8,7 +8,7 @@
 class Solution:
     def mySqrt(self, x: int) -> int:
         """
-        time: O(len(x))
+        time: O(1)
         space: O(1)
         """
         return int(x ** 0.5)
