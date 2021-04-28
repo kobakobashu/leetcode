@@ -13,6 +13,10 @@
 #         self.right = right
 class Solution:
     def isBalanced(self, root: TreeNode) -> bool:
+        """
+        time: O(N)  N : the total of all nodes
+        space: O(N)
+        """
         if not root:
             return True
         node_left = self.depth(root.left)
@@ -21,6 +25,6 @@ class Solution:
     def depth(self, node):
         if not node:
             return 0
-        return max(self.depth(node.left), self.depth(node.right))+1
+        return max(self.depth(node.left), self.depth(node.right)) + 1
 # @lc code=end
 
