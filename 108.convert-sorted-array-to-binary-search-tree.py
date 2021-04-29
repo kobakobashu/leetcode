@@ -20,7 +20,7 @@ class Solution:
         if not nums:
             return None
         half = len(nums) // 2
-        node = TreeNode(nums[half], None, None)
+        node = TreeNode(nums[half])
 
         node.left = self.sortedArrayToBST(nums[:half])
         node.right = self.sortedArrayToBST(nums[half+1:])
