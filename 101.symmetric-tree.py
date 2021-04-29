@@ -31,8 +31,7 @@ class Solution:
             outtree = self.isMirror(left.left, right.right)
             intree = self.isMirror(left.right, right.left)
             return outtree and intree
-        else:
-            return False
+        return False
 
 
 # @lc code=end
