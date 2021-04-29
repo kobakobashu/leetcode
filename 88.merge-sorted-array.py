@@ -15,8 +15,7 @@ class Solution:
         space: O(1)  if (len(nums1) - m) > n
              : O(n)  else
         """
-        del nums1[m:]
-        nums1.extend(nums2)
+        nums1[m:] = nums2
         nums1.sort()
         
 # @lc code=end
