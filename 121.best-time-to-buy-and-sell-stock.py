@@ -13,6 +13,7 @@ class Solution:
         """
         if not prices:
             return ""
+
         min_price = prices[0]
         profit = 0
         for price in prices:
