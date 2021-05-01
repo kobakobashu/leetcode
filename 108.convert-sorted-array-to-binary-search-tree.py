@@ -19,6 +19,7 @@ class Solution:
         """
         if not nums:
             return None
+
         half = len(nums) // 2
         node = TreeNode(nums[half])
 
