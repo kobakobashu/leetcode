@@ -21,12 +21,12 @@ class Solution:
             return True
         else:
             return self.isMirror(root.left, root.right)
+            
     def isMirror(self, left, right):
         if not left and not right:
             return True
         if not left or not right:
             return False
-        
         if left.val == right.val:
             outtree = self.isMirror(left.left, right.right)
             intree = self.isMirror(left.right, right.left)
