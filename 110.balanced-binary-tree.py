@@ -19,9 +19,11 @@ class Solution:
         """
         if not root:
             return True
-        node_left = self.depth(root.left)
-        node_right = self.depth(root.right)
-        return (abs(node_left - node_right) < 2) and self.isBalanced(root.left) and self.isBalanced(root.right)
+
+        left_node_depth = self.depth(root.left)
+        right_node_depth = self.depth(root.right)
+        return (abs(left_node_depth - right_node_depth) < 2) and self.isBalanced(root.left) and self.isBalanced(root.right)
+
     def depth(self, node):
         if not node:
             return 0
