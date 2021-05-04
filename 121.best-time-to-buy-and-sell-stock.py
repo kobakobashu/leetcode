@@ -15,11 +15,11 @@ class Solution:
             return ""
 
         min_price = prices[0]
-        profit = 0
+        max_profit = 0
         for price in prices:
             min_price = min(price, min_price)
-            profit = max(price - min_price, profit)
-        return profit
+            max_profit = max(price - min_price, max_profit)
+        return max_profit
         
 # @lc code=end
 
