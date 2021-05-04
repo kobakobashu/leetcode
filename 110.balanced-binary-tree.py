@@ -27,6 +27,7 @@ class Solution:
     def depth(self, node):
         if not node:
             return 0
+            
         return max(self.depth(node.left), self.depth(node.right)) + 1
 # @lc code=end
 
