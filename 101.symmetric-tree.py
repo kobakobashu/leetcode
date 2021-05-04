@@ -20,16 +20,16 @@ class Solution:
         if not root:
             return True
         else:
-            return self.isMirror(root.left, root.right)
+            return self.check_mirror(root.left, root.right)
             
-    def isMirror(self, left, right):
+    def check_mirror(self, left, right):
         if not left and not right:
             return True
         if not left or not right:
             return False
         if left.val == right.val:
-            outtree = self.isMirror(left.left, right.right)
-            intree = self.isMirror(left.right, right.left)
+            outtree = self.check_mirror(left.left, right.right)
+            intree = self.check_mirror(left.right, right.left)
             return outtree and intree
         return False
 
