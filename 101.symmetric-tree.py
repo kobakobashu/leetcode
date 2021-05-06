@@ -17,12 +17,18 @@ class Solution:
         time: O(N)  N : the number of all nodes
         space: O(N)
         """
-        if not root:
-            return True
-        else:
-            return self.check_mirror(root.left, root.right)
+        return True if not root else self.check_mirror(root.left, root.right)
             
     def check_mirror(self, left, right):
+        """
+        check whether the left and right are mirrored or not
+
+        Parameters
+        ----------
+        :type left: TreeNode
+        :type right: TreeNode
+        :rtype: bool
+        """
         if not left and not right:
             return True
         if not left or not right:
