@@ -12,11 +12,11 @@ class Solution:
         space: O(1)
         """
         sum_profit_to_day = 0
-        pre_price = prices[0]
         for day in range(1, len(prices)):
-            if pre_price <= prices[day]:
-                sum_profit_to_day += (prices[day] - pre_price)
-            pre_price = prices[day]
+            cur_price = prices[day]
+            pre_price = prices[day - 1]
+            if pre_price <= cur_price:
+                sum_profit_to_day += (cur_price - pre_price)
         return sum_profit_to_day
                 
 # @lc code=end
