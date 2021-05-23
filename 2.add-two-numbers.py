@@ -12,13 +12,23 @@
 #         self.next = next
 class Solution:
     def addTwoNumbers(self, l1: ListNode, l2: ListNode) -> ListNode:
-        cur_output = ListNode()
-        output = cur_output
-        while l1 or l2:
-            cur_output.val = l1.val + l2.val
-            cur_output = cur_output.next
-            l1 = l1.next
-            l2 = l2.next
-        return output
+        """
+        time: O(len(n))  n : max(len(l1), len(l2))
+        space: O(len(n))
+        """
+        total = cur = ListNode(0)
+        carry = 0
+        while l1 or l2 or carry:
+            sum_digit = carry
+            if l1:
+                sum_digit += l1.val
+                l1 = l1.next
+            if l2:
+                sum_digit += l2.val
+                l2 = l2.next
+            cur.next = ListNode(sum_digit % 10)
+            carry = sum_digit // 10
+            cur = cur.next
+        return total.next
 # @lc code=end
 
