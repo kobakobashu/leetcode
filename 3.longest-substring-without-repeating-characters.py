@@ -7,6 +7,7 @@
 # @lc code=start
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
+        """
         if not s:
             return 0
 
@@ -31,6 +32,39 @@ class Solution:
         #    return len(s)
         
         return max(cur_max_length, len(s) - last_repeat_position, first_repeat_position)
-        
+        """
+        """
+        if len(s) <= 1:
+            return len(s)
+
+        ref = {}
+        cur_max_length = 0
+        start = 0
+        for idx, alph in enumerate(s):
+            if alph in ref:
+                start = ref[alph] + 1
+                cur_max_length = idx - start + 1
+                ref[alph] = idx
+            else:
+                ref[alph] = idx
+        return cur_max_length
+        """
+        ref = {}
+        cur_max_length = 0
+        start = 0
+        _max = 0
+        for idx, alph in enumerate(s):
+            if alph in ref:
+                start = ref[alph] + 1
+                _max = max(_max, idx - ref[alph])
+                ref[alph] = idx
+            else:
+                ref[alph] = idx
+            cur_max_length = max(idx - start + 1, cur_max_length)
+            print("max")
+            print(_max)
+            print("cur_max_length")
+            print(cur_max_length)
+        return max(_max, cur_max_length)
 # @lc code=end
 
