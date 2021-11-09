@@ -21,6 +21,7 @@ E = edge nums
 time complexity : O(V + E)
 space complexity : O(V)
 """
+
 class Solution:
     def isSameTree(self, p: TreeNode, q: TreeNode) -> bool:
         """return true if the p and q are same trees
@@ -46,6 +47,7 @@ E = edge nums
 time complexity : O(V + E)
 space complexity : O(V)
 """
+
 class Solution:
     def isSameTree(self, p: TreeNode, q: TreeNode) -> bool:
         """return true if the p and q are same trees
@@ -57,7 +59,8 @@ class Solution:
         Returns:
             bool: return true if the p and q are same trees
         """
-        queue = deque([(p, q)])
+        queue = deque()
+        queue.append([p, q])
 
         while queue:
             cur_p, cur_q = queue.popleft()
