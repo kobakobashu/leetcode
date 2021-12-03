@@ -14,8 +14,11 @@ class Solution:
     def deleteDuplicates(self, head: ListNode) -> ListNode:
         """
         time: O(len(head))
-        space: O(len(head))
+        space: O(1)
         """
+        if not head:
+            return None
+
         cur = head
         while cur and cur.next:
             if cur.val == cur.next.val:
@@ -23,6 +26,4 @@ class Solution:
             else:
                 cur = cur.next
         return head
-        
 # @lc code=end
-
