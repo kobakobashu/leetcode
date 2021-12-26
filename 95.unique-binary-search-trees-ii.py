@@ -11,6 +11,11 @@
 #         self.val = val
 #         self.left = left
 #         self.right = right
+
+"""
+time: O(n^3)
+space: O(n^2)
+"""
 class Solution:
     def generateTrees(self, n: int) -> List[Optional[TreeNode]]:
         """Function to return structurally unique BST's
@@ -47,5 +52,6 @@ class Solution:
                                 res.append(root)
                                 
                     dp[start][end] = res
+
         return dp[1][n]
 # @lc code=end
